@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VideoWall</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      /* .img-container {
+        height: 100vh;
+      } */
+
+      img {
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img-container">
+      <img id="mainImg" src="./landside.jpg" alt="Landside VideoWall" />
+    </div>
+    <script>
+      const img = document.getElementById("mainImg");
+      setInterval(() => {
+        if (img.getAttribute("src").includes("landside"))
+          img.setAttribute("src", "./airside.jpg");
+        else img.setAttribute("src", "./landside.jpg");
+      }, 10000);
+    </script>
+  </body>
+</html>
