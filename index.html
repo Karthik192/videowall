@@ -25,6 +25,7 @@
 
       img {
         height: 98vh;
+        width: 100%;
       }
     </style>
   </head>
@@ -32,6 +33,18 @@
     <div id="scrollable-container" class="img-container">
       <img id="mainImg" src="./landside.jpg" alt="Landside VideoWall" />
     </div>
-    <script src="./index.js"></script>
+    <script>
+      const img = document.getElementById("mainImg");
+      setInterval(() => {
+        if (img.getAttribute("src").includes("landside")) {
+          img.setAttribute("src", "./airside.jpg");
+          smoothScroll();
+        } else {
+          img.setAttribute("src", "./landside.jpg");
+          smoothScroll();
+        }
+      }, 10000);
+    </script>
+    <!-- <script src="./index.js"></script> -->
   </body>
 </html>

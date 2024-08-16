@@ -1,11 +1,16 @@
 const scrollableContainer = document.getElementById("scrollable-container");
-const scrollDuration = 30000;
+const scrollDuration = 20000;
 const scrollDistance =
   scrollableContainer.scrollWidth - scrollableContainer.clientWidth;
 
-console.log("scrollDistance:", scrollDistance); // Check if scrollDistance is correct
+function pauseExecution(milliseconds) {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
+console.log("scrollDistance:", scrollDistance);
 
 async function smoothScroll() {
+  await pauseExecution(3000);
   const startTime = Date.now();
 
   function animateScroll() {
@@ -35,4 +40,4 @@ setInterval(() => {
     img.setAttribute("src", "./landside.jpg");
     smoothScroll();
   }
-}, 35000);
+}, 26000);
