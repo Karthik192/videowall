@@ -15,22 +15,23 @@
         height: 100vh;
       } */
 
+      body {
+        overflow: hidden;
+      }
+
+      #scrollable-container {
+        overflow-x: scroll;
+      }
+
       img {
-        height: 100vh;
+        height: 98vh;
       }
     </style>
   </head>
   <body>
-    <div class="img-container">
+    <div id="scrollable-container" class="img-container">
       <img id="mainImg" src="./landside.jpg" alt="Landside VideoWall" />
     </div>
-    <script>
-      const img = document.getElementById("mainImg");
-      setInterval(() => {
-        if (img.getAttribute("src").includes("landside"))
-          img.setAttribute("src", "./airside.jpg");
-        else img.setAttribute("src", "./landside.jpg");
-      }, 10000);
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>
